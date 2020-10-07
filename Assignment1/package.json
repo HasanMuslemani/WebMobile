@@ -1,11 +1,14 @@
 {
-  "name": "assignment1",
+  "name": "angular-class-example",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "gc": "ng generate component",
+    "gp": "ng generate pipe",
+    "gd": "ng generate directive",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
