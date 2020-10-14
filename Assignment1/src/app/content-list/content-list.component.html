@@ -1,0 +1,15 @@
+<div class="contents" *ngFor="let individualContent of contents">
+  <div class="content-{{individualContent.id}}">
+    <h1 class="title">{{individualContent.title}}</h1>
+    <img class="image" src="{{individualContent.imgUrl}}" (click)="this.showID(individualContent.id)">
+    <div class="body">{{individualContent.body}}</div>
+    <div class="author">Author: {{individualContent.author}}</div>
+    <div class="type">Genre: {{individualContent.type}}</div>
+    <div class="tags-wrapper">
+      Tags:
+     <div class="tags" *ngFor="let tag of individualContent.tags">
+      <div class="tag">{{tag}}</div>
+     </div>
+    </div>
+  </div>
+</div>
