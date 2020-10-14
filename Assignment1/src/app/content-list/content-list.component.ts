@@ -11,7 +11,6 @@ export class ContentListComponent implements OnInit {
   contents: Content[];
 
   constructor() {
-    this.contents = [];
     const content1: Content = {
       id: 0,
       author: 'J.K. Rowling',
@@ -57,18 +56,10 @@ export class ContentListComponent implements OnInit {
       body: 'A young girl lost at sea is saved by a spooky pirate ship!',
       tags: ['1', '2', '3']
     };
-    this.contents.push(content1);
-    this.contents.push(content2);
-    this.contents.push(content3);
-    this.contents.push(content4);
-    this.contents.push(content5);
+    this.contents = [content1, content2, content3, content4, content5];
   }
 
   ngOnInit(): void {
-  }
-
-  showID(id: number): void {
-    console.log('ID: ' + id);
   }
 
 }

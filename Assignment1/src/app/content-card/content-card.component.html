@@ -1,2 +1,14 @@
-
+<div class="content-{{content.id}}">
+  <h1 class="title">{{content.title}}</h1>
+  <img *ngIf="content.imgUrl" class="image" src="{{content.imgUrl}}" (click)="this.showID(content.id)">
+  <div class="body">{{content.body}}</div>
+  <div class="author">Author: {{content.author}}</div>
+  <div *ngIf="content.type" class="type">Genre: {{content.type}}</div>
+  <div *ngIf="content.tags" class="tags-wrapper">
+    Tags:
+    <div class="tags" *ngFor="let tag of content.tags">
+      <div class="tag">{{tag}}</div>
+    </div>
+  </div>
+</div>
 
