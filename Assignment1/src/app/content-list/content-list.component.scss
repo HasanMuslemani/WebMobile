@@ -7,9 +7,29 @@
   background-color: #0344a8;
   color: white;
 }
-
+/* This was for assignment 2
 .contents:last-child {
   border: 2px solid black;
   background-color: white;
   color: black;
 }
+ */
+
+.contents-fantasy {
+  border: 5px solid green;
+}
+
+.contents-adventure {
+  border: 5px solid purple;
+}
+
+.contents-horror {
+  border: 5px solid red;
+}
+
+
+button {
+  display: block;
+  margin: 10px;
+}
+

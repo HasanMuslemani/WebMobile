@@ -61,5 +61,14 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  submitInput(title: string): void {
+    // filter all the results of content to the contents with the given title
+    // if it has at least 1 result, then we know its in our contents list
+    if (this.contents.filter(content => content.title === title).length > 0) {
+      alert('"' + title + '" does exist');
+    } else {
+      alert('"' + title + '" does not exist');
+    }
+  }
 
 }

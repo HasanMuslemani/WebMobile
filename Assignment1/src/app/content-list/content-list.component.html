@@ -1,1 +1,6 @@
-<app-content-card class="contents" *ngFor="let individualContent of contents" [content]="individualContent"></app-content-card>
+<input #cardTitle >
+<button (click)="submitInput(cardTitle.value)">Check if the book exists</button>
+
+<app-content-card class="contents contents-fantasy" *ngFor="let individualContent of (contents | contentType: 'Fantasy')" [content]="individualContent"></app-content-card>
+<app-content-card class="contents contents-adventure" *ngFor="let individualContent of (contents | contentType: 'Adventure')" [content]="individualContent"></app-content-card>
+<app-content-card class="contents contents-horror" *ngFor="let individualContent of (contents | contentType: 'Horror')" [content]="individualContent"></app-content-card>
