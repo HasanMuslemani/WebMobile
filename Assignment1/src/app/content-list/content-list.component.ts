@@ -14,7 +14,7 @@ export class ContentListComponent implements OnInit {
     const content1: Content = {
       id: 0,
       author: 'J.K. Rowling',
-      imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg',
+      // imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg',
       type: 'Fantasy',
       title: 'Harry Potter and the Philosopher\'s Stone',
       body: 'A boy learns that he is the son of 2 powerful wizards.',
