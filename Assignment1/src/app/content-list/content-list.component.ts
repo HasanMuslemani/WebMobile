@@ -70,5 +70,11 @@ export class ContentListComponent implements OnInit {
       alert('"' + title + '" does not exist');
     }
   }
+  addBookToList(newBook: Content): void {
+    // break the book's reference - it was changing the previous books value to the new one
+    const bookCopy = Object.assign({}, newBook);
+    this.contents.push(bookCopy);
+    this.contents = Object.assign([], this.contents);
+  }
 
 }

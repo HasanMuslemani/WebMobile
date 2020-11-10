@@ -1,1 +1,10 @@
-<p>create-component works!</p>
+<div class="create-content-inputs-wrapper">
+  <input [(ngModel)]="newBook.author" placeholder="*Author">
+  <input [(ngModel)]="newBook.imgUrl" placeholder="Image URL">
+  <input [(ngModel)]="newBook.type" placeholder="Genre">
+  <input [(ngModel)]="newBook.title" placeholder="*Title">
+  <input [(ngModel)]="newBook.body" placeholder="*Description">
+  <input #tags placeholder="Tags (Space separated)">
+  <button (click)="addBook(tags)">Add Book</button>
+  <p *ngIf="addBookFailed">{{errorMsg}}</p>
+</div>
