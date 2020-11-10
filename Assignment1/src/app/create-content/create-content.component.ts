@@ -4,10 +4,10 @@ import {split} from "ts-node";
 
 @Component({
   selector: 'app-create-component',
-  templateUrl: './create-component.component.html',
-  styleUrls: ['./create-component.component.scss']
+  templateUrl: './create-content.component.html',
+  styleUrls: ['./create-content.component.scss']
 })
-export class CreateComponentComponent implements OnInit {
+export class CreateContentComponent implements OnInit {
 
   @Output() newBookEvent = new EventEmitter<Content>();
   newBook: Content;
@@ -53,14 +53,14 @@ export class CreateComponentComponent implements OnInit {
     }).catch(_ => this.addBookFailed = true);
   }
   checkInput(): boolean {
-    if (this.newBook.author === ''){
-      this.errorMsg = 'Please fill in the author';
-      return false;
-    } else if (this.newBook.title === '') {
+    if (this.newBook.title === '') {
       this.errorMsg = 'Please fill in the title';
       return false;
     } else if (this.newBook.body === '') {
       this.errorMsg = 'Please fill in the description';
+      return false;
+    } else if (this.newBook.author === ''){
+      this.errorMsg = 'Please fill in the author';
       return false;
     }
     return true;

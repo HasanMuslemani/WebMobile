@@ -6,8 +6,8 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypePipe } from './content-type.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
-import { CreateComponentComponent } from './create-component/create-component.component';
-import {FormsModule} from "@angular/forms";
+import { CreateContentComponent } from './create-content/create-content.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import {FormsModule} from "@angular/forms";
     ContentListComponent,
     ContentTypePipe,
     HoverStyleDirective,
-    CreateComponentComponent,
+    CreateContentComponent,
   ],
   imports: [
     BrowserModule,
