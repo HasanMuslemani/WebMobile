@@ -1,7 +1,7 @@
 <div class="content-{{content.id}}">
   <h1 appHoverStyle [style]="0" class="title">{{content.title}}</h1>
   <img *ngIf="content.imgUrl" class="image" src="{{content.imgUrl}}" (click)="this.showID(content.id)">
-  <img *ngIf="!content.imgUrl" class = "image" src="https://www.zumlume.com/assets/frontend/images/default-book.png" (click)="this.showID(content.id)">
+  <img *ngIf="!content.imgUrl" class = "image" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg" (click)="this.showID(content.id)">
   <div class="body">{{content.body}}</div>
   <div class="author">Author: {{content.author}}</div>
   <div *ngIf="content.type" class="type">Genre: {{content.type}}</div>
