@@ -27,5 +27,9 @@ export class ContentListComponent implements OnInit {
       alert('"' + title + '" does not exist');
     }
   }
+  addBookToList(newBook: Content): void {
+    this.contents.push(newBook);
+    this.contents = Object.assign([], this.contents);
+  }
 
 }
