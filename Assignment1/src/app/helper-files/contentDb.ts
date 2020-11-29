@@ -7,7 +7,7 @@ export const BOOKSLIST: Content[] = [{
   type: 'Fantasy',
   title: 'Harry Potter and the Philosopher\'s Stone',
   body: 'A boy learns that he is the son of 2 powerful wizards.',
-  tags: ['1', '2', '3']
+  tags: ['Harry', 'Potter', 'Magic']
 },
 {
   id: 1,
@@ -16,7 +16,7 @@ export const BOOKSLIST: Content[] = [{
   type: 'Adventure',
   title: 'The Hunger Games',
   body: 'Fight to be the last one standing!',
-  tags: ['1', '2', '3']
+  tags: ['Games', 'Fight', 'Last One Standing']
 },
 {
   id: 2,
@@ -25,7 +25,7 @@ export const BOOKSLIST: Content[] = [{
   type: 'Adventure',
   title: 'Hatchet',
   body: 'A boy is deserted on an island alone.',
-  tags: ['1', '2', '3']
+  tags: ['Deserted', 'Island', 'Plane']
 },
 {
   id: 3,
@@ -34,7 +34,7 @@ export const BOOKSLIST: Content[] = [{
   type: 'Horror',
   title: 'The Shining',
   body: 'Do not enter that room. It is haunted!',
-  tags: ['1', '2', '3']
+  tags: ['Hotel', 'Haunted', 'Twins']
 },
 {
   id: 4,
@@ -43,5 +43,5 @@ export const BOOKSLIST: Content[] = [{
   type: 'Horror',
   title: 'Vampirates: Demons of the Ocean',
   body: 'A young girl lost at sea is saved by a spooky pirate ship!',
-  tags: ['1', '2', '3']
+  tags: ['Pirates', 'Demons', 'Spooky']
 }];

@@ -1,6 +1,14 @@
 <app-create-content (newBookEvent)="addBookToList($event)"></app-create-content>
-<input #cardTitle >
-<button (click)="submitInput(cardTitle.value)">Check if the book exists</button>
+<mat-form-field class="check-book-exists-input">
+  <mat-label>Book Title</mat-label>
+  <input matInput [matAutocomplete]="auto" #cardTitle>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let content of contents" [value]="content.title">
+      {{content.title}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field><br />
+<button mat-raised-button color="accent" (click)="submitInput(cardTitle.value)">Check if the book exists</button>
 
 <app-content-card class="contents contents-fantasy" *ngFor="let individualContent of contents" [content]="individualContent"></app-content-card>
 

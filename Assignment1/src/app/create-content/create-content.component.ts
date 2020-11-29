@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild} from '@angular/core';
 import {Content} from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
 import {MessageService} from '../services/message.service';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-content',
@@ -15,11 +16,12 @@ export class CreateContentComponent implements OnInit {
   addBookFailed: boolean;
   errorMsg: string;
 
-  constructor(private contentService: ContentService, private messageService: MessageService) {
+  constructor(private contentService: ContentService, private messageService: MessageService, public dialog: MatDialog) {
     this.newBook = {
       title: '',
       body: '',
       author: '',
+      tags: ''
     };
     this.addBookFailed = false;
   }
@@ -27,7 +29,16 @@ export class CreateContentComponent implements OnInit {
   ngOnInit(): void {
     this.newBookEvent.emit(this.newBook);
   }
-  addBook(tags: HTMLInputElement): void {
+  openAddGameDialog(): void {
+    const gameDialogRef = this.dialog.open(CreateContentDialogComponent, {
+      width: '400px'
+    });
+    gameDialogRef.afterClosed().subscribe(newBookFromDialog => {
+      this.newBook = newBookFromDialog;
+      this.addBook();
+    });
+  }
+  addBook(): void {
     const promise = new Promise((successful, fail) => {
       if (this.checkInput()) {
         successful('This book was successfully added: ' + this.newBook.title);
@@ -37,8 +48,8 @@ export class CreateContentComponent implements OnInit {
     });
     promise.then(success => {
       this.addBookFailed = false;
-      if (tags.value !== '') {
-        this.newBook.tags = tags.value.split(' ');
+      if (this.newBook.tags !== '') {
+        this.newBook.tags = this.newBook.tags.split(' ');
       }
       // add the new book to server
       let newBookFromServer: Content;
@@ -53,7 +64,7 @@ export class CreateContentComponent implements OnInit {
       this.newBook.body = '';
       this.newBook.imgUrl = '';
       this.newBook.type = '';
-      tags.value = '';
+      this.newBook.tags = '';
       console.log(success);
     }).catch(_ => this.addBookFailed = true);
   }
@@ -69,6 +80,31 @@ export class CreateContentComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+}
+
+class DialogData {
+}
+
+@Component({
+  selector: 'app-create-content-dialog',
+  templateUrl: 'create-content-dialog.component.html',
+})
+export class CreateContentDialogComponent {
+  newBook: any;
+
+  constructor(public dialogRef: MatDialogRef<CreateContentDialogComponent>) {
+    this.newBook = {
+      title: '',
+      body: '',
+      author: '',
+      tags: ''
+    };
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

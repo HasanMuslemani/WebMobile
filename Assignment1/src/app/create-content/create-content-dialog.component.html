@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add Book</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>*Title</mat-label>
+    <input matInput [(ngModel)]="newBook.title">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-label>Image URL</mat-label>
+    <input matInput [(ngModel)]="newBook.imgUrl">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-label>*Description</mat-label>
+    <input matInput [(ngModel)]="newBook.body">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-label>*Author</mat-label>
+    <input matInput [(ngModel)]="newBook.author">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-label>Genre</mat-label>
+    <input matInput [(ngModel)]="newBook.type">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <mat-label>Tags (Space seperated)</mat-label>
+    <input matInput [(ngModel)]="newBook.tags">
+  </mat-form-field><br />
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="newBook" cdkFocusInitial>Add Book</button>
+</div>

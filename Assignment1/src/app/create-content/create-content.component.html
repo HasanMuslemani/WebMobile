@@ -1,10 +1,4 @@
 <div class="create-content-inputs-wrapper">
-  <input [(ngModel)]="newBook.title" placeholder="*Title">
-  <input [(ngModel)]="newBook.imgUrl" placeholder="Image URL">
-  <input [(ngModel)]="newBook.body" placeholder="*Description">
-  <input [(ngModel)]="newBook.author" placeholder="*Author">
-  <input [(ngModel)]="newBook.type" placeholder="Genre">
-  <input #tags placeholder="Tags (Space separated)"> <br />
-  <button (click)="addBook(tags)">Add Book</button>
-  <p *ngIf="addBookFailed">{{errorMsg}}</p>
+  <button mat-flat-button color="primary" (click)="openAddGameDialog()">Add Book</button>
+<!--  <p *ngIf="addBookFailed">{{errorMsg}}</p>-->
 </div>
