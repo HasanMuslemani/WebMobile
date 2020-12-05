@@ -1,0 +1,48 @@
+.content-wrapper {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  color: darkblue;
+  padding: 25px 0;
+}
+
+.image {
+  width: 350px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.body {
+  font-size: 1.2em;
+}
+
+.author {
+  margin-top: 15px;
+}
+
+.type {
+  margin-top: 15px;
+}
+
+.tags-wrapper {
+  margin-top: 15px;
+}
+
+.tags {
+  display: inline;
+}
+
+.tag {
+  display: inline;
+}
+
+.tag:after {
+  content: ", ";
+}
+
+.tags:last-child > .tag:after{
+  content: "";
+}

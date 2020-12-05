@@ -1,0 +1,14 @@
+<div class="content-wrapper">
+  <h1 appHoverStyle [style]="0" class="title">{{content.title}}</h1>
+  <img *ngIf="content.imgUrl" class="image" src="{{content.imgUrl}}" (click)="this.showID(content.id)">
+  <img *ngIf="!content.imgUrl" class = "image" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Empty_book.jpg" (click)="this.showID(content.id)">
+  <div class="body">{{content.body}}</div>
+  <div class="author">Author: {{content.author}}</div>
+  <div *ngIf="content.type" class="type">Genre: {{content.type}}</div>
+  <div *ngIf="content.tags" class="tags-wrapper">
+    Tags:
+    <div class="tags" *ngFor="let tag of content.tags">
+      <div appHoverStyle [style]="1" class="tag">{{tag}}</div>
+    </div>
+  </div>
+</div>

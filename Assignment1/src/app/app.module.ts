@@ -18,7 +18,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatListModule} from "@angular/material/list";
+import {MatListModule} from '@angular/material/list';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import {MatListModule} from "@angular/material/list";
     HoverStyleDirective,
     MessagesComponent,
     CreateContentComponent,
-    CreateContentDialogComponent
+    CreateContentDialogComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,12 @@ import {MatListModule} from "@angular/material/list";
     MatFormFieldModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatListModule
+    MatListModule,
+    RouterModule.forRoot([
+      {path: 'content/:id', component: ContentDetailComponent},
+      {path: 'content', component: ContentListComponent},
+      {path: '**', component: NotFoundComponent}
+    ])
   ],
   providers: [],
   entryComponents: [CreateContentDialogComponent],

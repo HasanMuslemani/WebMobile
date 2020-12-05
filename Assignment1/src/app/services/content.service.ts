@@ -15,6 +15,9 @@ export class ContentService {
   }
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
+  getBook(id: number): Observable<Content> {
+    return this.http.get<Content>('api/content/' + id);
+  }
   getBooksObservable(): Observable<Content[]> {
     this.messageService.add('Content retrieved!');
     return this.http.get<Content[]>('api/content');

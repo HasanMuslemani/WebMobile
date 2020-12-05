@@ -11,34 +11,6 @@
   margin-bottom: 20px;
 }
 
-.body {
-  font-size: 1.2em;
-}
-
-.author {
-  margin-top: 15px;
-}
-
-.type {
-  margin-top: 15px;
-}
-
-.tags-wrapper {
-  margin-top: 15px;
-}
-
-.tags {
-  display: inline;
-}
-
-.tag {
-  display: inline;
-}
-
-.tag:after {
-  content: ", ";
-}
-
-.tags:last-child > .tag:after{
-  content: "";
+a {
+  color: orange;
 }
